@@ -18,10 +18,4 @@
    - **Category, Author**: for imported articles
    - **Other settings:** see plugin options
 
-## License
 
-GPL-2.0-or-later
-
-## Author
-
-DWiM, 2026
