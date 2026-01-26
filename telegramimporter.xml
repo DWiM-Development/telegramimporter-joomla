@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade">
+    <name>PLG_SYSTEM_TELEGRAMIMPORTER</name>
+    <version>1.0.0</version>
+    <creationDate>2026-01-06</creationDate>
+    <author>DWiM</author>
+    <description>PLG_SYSTEM_TELEGRAMIMPORTER_XML_DESCRIPTION</description>
+	<targetplatform name="joomla" version="^5.0 || ^4.4" />
+
+    <files>
+        <filename plugin="telegramimporter">telegramimporter.php</filename>
+        <folder>src</folder>
+        <folder>sql</folder>
+        <folder>language</folder>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_telegramimporter.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_telegramimporter.ini</language>
+        <language tag="uk-UA">uk-UA/uk-UA.plg_system_telegramimporter.sys.ini</language>
+        <language tag="uk-UA">uk-UA/uk-UA.plg_system_telegramimporter.ini</language>
+    </languages>
+
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <updates>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </updates>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic" label="PLG_SYSTEM_TELEGRAMIMPORTER_FIELDSET_BASIC">
+                <field name="bot_token" type="text"
+                       label="PLG_SYSTEM_TELEGRAMIMPORTER_FIELD_BOT_TOKEN_LABEL"
+                       description="PLG_SYSTEM_TELEGRAMIMPORTER_FIELD_BOT_TOKEN_DESC"
+                       required="true"/>
+                <field name="channel_id" type="text"
+                       label="PLG_SYSTEM_TELEGRAMIMPORTER_FIELD_CHANNEL_ID_LABEL"
+                       description="PLG_SYSTEM_TELEGRAMIMPORTER_FIELD_CHANNEL_ID_DESC"
+                       required="true"/>
+                <field name="category_id" type="category" extension="com_content"
+                       label="PLG_SYSTEM_TELEGRAMIMPORTER_FIELD_CATEGORY_ID_LABEL"
+                       description="PLG_SYSTEM_TELEGRAMIMPORTER_FIELD_CATEGORY_ID_DESC"
+                       required="true"/>
+                <field name="author_id" type="user"
+                       label="PLG_SYSTEM_TELEGRAMIMPORTER_FIELD_AUTHOR_ID_LABEL"
+                       description="PLG_SYSTEM_TELEGRAMIMPORTER_FIELD_AUTHOR_ID_DESC"
+                       default="0"/>
+                <field name="import_limit" type="number"
+                       label="PLG_SYSTEM_TELEGRAMIMPORTER_FIELD_IMPORT_LIMIT_LABEL"
+                       description="PLG_SYSTEM_TELEGRAMIMPORTER_FIELD_IMPORT_LIMIT_DESC"
+                       default="10" min="1" step="1"/>
+                <field name="import_interval" type="number"
+                       label="PLG_SYSTEM_TELEGRAMIMPORTER_FIELD_IMPORT_INTERVAL_LABEL"
+                       description="PLG_SYSTEM_TELEGRAMIMPORTER_FIELD_IMPORT_INTERVAL_DESC"
+                       default="10" min="0" step="1"/>
+                <field name="last_update_id" type="hidden" default="0"/>
+                <field name="last_run" type="hidden" default="0"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
