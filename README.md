@@ -18,8 +18,8 @@
    - **Category, Author**: for imported articles
    - **Other settings:** see plugin options
 
+_______________________________________________________________________________________
 
-# Telegram Importer
 **Плагін Joomla! для автоматичного імпорту постів із Telegram-каналу в матеріали.**
 
 ## Можливості
