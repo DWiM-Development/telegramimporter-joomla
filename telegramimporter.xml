@@ -8,7 +8,7 @@
 	<targetplatform name="joomla" version="^5.0 || ^4.4" />
 <updateservers>
     <server type="extension" name="Update Server">
-        https://ВАШ_САЙТ_АБО_ГІТХАБ_СИЛКА/updates.xml
+       https://github.com/DWiM-Development/telegramimporter-joomla/updates.xml
     </server>
 </updateservers>
     <files>
