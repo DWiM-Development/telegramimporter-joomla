@@ -6,7 +6,11 @@
     <author>DWiM</author>
     <description>PLG_SYSTEM_TELEGRAMIMPORTER_XML_DESCRIPTION</description>
 	<targetplatform name="joomla" version="^5.0 || ^4.4" />
-
+<updateservers>
+    <server type="extension" name="Update Server">
+        https://ВАШ_САЙТ_АБО_ГІТХАБ_СИЛКА/updates.xml
+    </server>
+</updateservers>
     <files>
         <filename plugin="telegramimporter">telegramimporter.php</filename>
         <folder>src</folder>
